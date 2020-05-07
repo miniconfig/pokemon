@@ -17,6 +17,9 @@
   #deck-2 {
     right: 0;
   }
+  .deck .user_name {
+    font-size: 24px;
+  }
   .deck .card {
     height: 15%;
     width: 100px;
@@ -151,6 +154,7 @@
 
 
 <div id="deck-1" class="deck">
+  <div id="deck-1-user" class="user_name"><%= @game.player_one.name%></div>
   <% @game.player_one.pokemon_cards.each do |card| %>
     <div class="card" data-card-id="<%= card.id %>">
       <%= image_tag card.image_path %>
@@ -162,6 +166,7 @@
 </div>
 
 <div id="deck-2" class="deck">
+  <div id="deck-2-user" class="user_name"><%= @game.player_two.name%></div>
   <% @game.player_two.pokemon_cards.each do |card| %>
     <div class="card" data-card-id="<%= card.id %>">
       <%= image_tag card.image_path %>
